@@ -1,7 +1,7 @@
-# RPSLS-Rock-Paper-Scissors-Lizard-Spock-
-Python, (Git/GitHub, VS Code w/Debugger)
+# RPSLS (Rock-Paper-Scissors-Lizard-Spock)
+Python (Git/GitHub, VS Code w/Debugger)
 
-""Main Stories
+"" Main Stories
  
 As a developer, I want to make at least 10 commits with descriptive messages.
 As a developer, I want to find a way to properly incorporate inheritance into my game.
@@ -25,7 +25,7 @@ Algorithm
 6. Player Two chooses Gesture
 7. Compare the gestures
 8. Determine winner of the round
-a. Account for ties
+    a. Account for ties
 9. Determine if the GAME itself has been won
     a. If it has not, repeat steps 5-9
 10. If the game has been won, display the winner, and end the 
