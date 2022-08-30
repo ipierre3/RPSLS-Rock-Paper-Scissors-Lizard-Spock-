@@ -10,16 +10,4 @@ class Human(Player):
 
     def choose_gestures(self):
         self.choosen_gesture = input('Use the number keys to enter your selection')
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
