@@ -2,7 +2,14 @@ class Player:
     def __init__(self):
         pass
 
-    def gethumanPlayerChoice():
+
+    def player_one():
+        pass
+
+    def player_two():
+        pass
+
+    def get_human_player_choice():
         choice = int(input('Choose your weapon: '))
         while True:
             if choice > 5:
