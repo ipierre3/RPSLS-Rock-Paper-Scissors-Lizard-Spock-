@@ -16,20 +16,19 @@ As a player, I want the option of a single player (human vs AI) or a multiplayer
 
 Algorithm
 
-1. Display a welcome message
-2. Explain the rules
-3. Choose game mode - singleplayer (Human vs. AI) or multiplayer 
-(Human vs. Human)
-4. Choose number of rounds (but make sure it’s at least 3)
-5. Player One chooses Gesture
-6. Player Two chooses Gesture
-7. Compare the gestures
-8. Determine winner of the round
+1. Display a welcome message -----> Game class
+2. Explain the rules -----> Game class
+3. Choose game mode - single player (Human vs. AI) or multiplayer 
+(Human vs. Human) -----> Game class
+4. Choose number of rounds (but make sure it’s at least 3) -----> Game class
+5. Player One chooses Gesture -----> for Player class
+6. Player Two chooses Gesture -----> for Player class
+7. Compare the gestures -----> Game class
+8. Determine winner of the round -----> Game class
     a. Account for ties
-9. Determine if the GAME itself has been won
+9. Determine if the GAME itself has been won -----> Game Class
     a. If it has not, repeat steps 5-9
-10. If the game has been won, display the winner, and end the 
-game
+10. If the game has been won, display the winner, and end the game -----> Game class
 
 Classes
 
