@@ -3,7 +3,7 @@ class Player:
         pass
 
     def player_one():
-        pass
+
 
     def player_two():
         pass
