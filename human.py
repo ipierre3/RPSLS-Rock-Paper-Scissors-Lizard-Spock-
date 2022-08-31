@@ -1,6 +1,3 @@
-from random import choices
-from secrets import choice
-from game import chosen_gesture
 from player import Player
 
 
@@ -11,21 +8,21 @@ class Human(Player):
         self.score = 0
         self.name = name
 
-    def player_gesture(self):
+    def choose_gesture(self):
         self.chosen_gesture = int(input('Choose your weapon: '))
         while True:
-            if choice > 5:
+            if self.chosen_gesture > 5:
                 print("Invalid choice. Please choose again")
-            elif choice < 1:
+            elif self.chosen_gesture < 1:
                 print("Invalid choice. Please choose again")
-            elif choice == 1:
+            elif self.chosen_gesture == 1:
                 print("You picked Rock")
-            elif choice == 2:
+            elif self.chosen_gesture == 2:
                 print("You picked Paper")
-            elif choice == 3:
+            elif self.chosen_gesture == 3:
                 print("You picked Scissors")
-            elif choice == 4:
+            elif self.chosen_gesture == 4:
                 print("You picked Lizard")
-            elif choice == 5:
+            elif self.chosen_gesture == 5:
                 print("You picked Spock")
-            return choice
+            return self.chosen_gesture
