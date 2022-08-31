@@ -6,27 +6,6 @@ class Player:
         self.score = 0
         self.choice = 0
 
-    def choice(self):
-            pass
-
-    # def player_one():
-    #     pass
-
-    # def player_two():
-    #     pass
-=======
-class Player:
-    def __init__(self):
-        super().__init__()
-        pass
-
-
-    def player_one():
-        pass
-
-    def player_two():
-        pass
-
     def get_human_player_choice(choice):
         choice = int(input('Choose your weapon: '))
         while True:
@@ -45,4 +24,10 @@ class Player:
             elif choice == 5:
                 print("You picked Spock")
             return choice
->>>>>>> 2e800b6de91b492bc10daf6eaeb19d683d6ec2cc
+
+    def player_one():
+        pass
+
+    def player_two():
+        pass
+
