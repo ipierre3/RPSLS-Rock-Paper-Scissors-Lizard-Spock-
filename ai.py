@@ -9,7 +9,7 @@ class AI(Player):
         self.score = 0
         self.name = name
 
-    def ai_gesture(self):
+    def choose_gesture(self):
         self.chosen_gesture = str(random.randint(0,4))
         gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         sleep(1)

@@ -1,41 +1,37 @@
-from player import Player
 from ai import AI
 from human import Human
 
 class Game:
    def __init__(self):
-    self.human = Human("Player 1")
-    self.ai = AI("Skynet")
+    self.player_one = Human("Player")
+    self.player_two = None
+    self.rounds = 0
 
 
    def run_game(self):
         self.welcome_screen()
-        self.game_mode()
         self.number_of_rounds()
-        self.chosen_gesture()
+        self.game_mode()
+        self.compare_gesture()
         self.determine_winner()
         self.play_again()
 
    def welcome_screen(self):
-        print('\nWelcome to Rock Paper Scissors Lizard Spock\n \nEach match will be best of three games\nYou will use the number keys to enter your selection')
-        print('\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
+        print('\nWelcome to Rock Paper Scissors Lizard Spock\n \nGame will be played with a minimum of 3 rounds to decide a winner\nYou will use the number keys to enter your selection')
+        print('\nREMEMBER:\n\nRock crushes Scissors\nScissors cuts Paper\nPaper covers Rock\nRock crushes Lizard\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\n')
 
         play = input("Now would you like to play Rock, Paper, Scissors, Lizard, Spock(y/n): ").lower()
         if play == "y":
-            print("1. Rock")
-            print("2. Paper")
-            print("3. Scissors")
-            print("4. Lizard")
-            print("5. Spock")
+            print('\nFor selections: ')
+            print("\n1 = Rock")
+            print("2 = Paper")
+            print("3 = Scissors")
+            print("4 = Lizard")
+            print("5 = Spock")
 
-        elif play != "n":
-            print("Error: Please type y for yes or n for no:")
-
-#    def game_mode(self):
-#         self.player = input('Would you like Single or Multi-player?: ')
-#             if self.player = 'single"
-#             pass
-    
+        elif play == "n":
+            print("\nNo worries! Maybe next time")
+            self.welcome_screen()
 
    def number_of_rounds(self):
         rounds = int(input('How many rounds do you wish to play?: '))
@@ -44,26 +40,21 @@ class Game:
             ai = self.ai_gesture()
             
 
-   def chosen_gesture(self, human, ai):
-        pass
+   def compare_gesture(self):
+    pass
+    
        
         
-
-
    def determine_winner(self):
-        if self.human == self.ai:
-            print('Tie')
-        elif self.human > self.ai:
-            print('Player Wins')
-        else:
-            print('AI Wins')
+        
 
    def play_again(self):
         while True:
-            self.play_again = input('Would you like to play again? Enter(y/n): ').lower()
-            if play_again != 'y':
+            self.again = input('Would you like to play again? Enter(y/n): ').lower()
+            if self.again == 'y':
+                self.welcome_screen()
+            else:
+                print('Thanks for playing!')
                 break
-
-        print('Thanks for playing!')
 
 
