@@ -9,8 +9,8 @@ class AI(Player):
         self.score = 0
         self.name = name
 
-    def choose_gestures(self):
-        self.choosen_gesture = str(random.randint(0,4))
+    def ai_gesture(self):
+        self.chosen_gesture = str(random.randint(0,4))
         gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         sleep(1)
-        print(f'{self.name} has picked {gestures_list[int(self.chosen_gestures)]})')
+        print(f'{self.name} has picked {gestures_list[int(self.chosen_gesture)]})')
