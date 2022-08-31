@@ -34,27 +34,11 @@ class Game:
             self.welcome_screen()
 
    def number_of_rounds(self):
-        self.rounds = int(input('\nHow many rounds do you wish to play?: '))
-        while self.rounds < 3:
-            print('Sorry! Rounds now defaulted to 3')
-            for num_rounds in range(3):
-                num_rounds += 1
-            return num_rounds
-        if self.rounds >= 3:
-            for num_rounds in range(int(self.rounds)):
-                num_rounds += 1
-            return num_rounds
-   
-   def game_mode(self):
-        self.player = input('Would you like Single or Multi-player?: ').lower()
-        if self.player == 'single':
-            print('You have selected to play against Skynet')
-            self.player_two = AI('Skynet')
-        elif self.player == 'multi-player':
-            print('You have chosen PvP style')
-            self.player_two = Human('Player 2')
-        else:
-            print('Invalid Choice')
+        rounds = int(input('How many rounds do you wish to play?: '))
+        for number in range(rounds):
+            player = self.player_gesture()
+            ai = self.ai_gesture()
+            
 
    def compare_gesture(self):
     pass
