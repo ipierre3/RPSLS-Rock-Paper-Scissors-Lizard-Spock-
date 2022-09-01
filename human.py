@@ -10,7 +10,7 @@ class Human(Player):
 
     def choose_gesture(self):
         self.gestures = ['Rock', 'Paper', "Scissors", 'Lizard', "Spock"]
-        self.chosen_gesture = int(input('\nPlayer Choose your weapon: '))
+        self.chosen_gesture = int(input(f'\n{self.name} Choose your weapon: '))
         while True:
             if self.chosen_gesture > 4:
                 print("Invalid choice. Please choose again")
@@ -19,13 +19,13 @@ class Human(Player):
                 print("Invalid choice. Please choose again")
                 self.choose_gesture()
             elif self.chosen_gesture == 0:
-                print("You picked Rock")
+                print(f"{self.name} has picked Rock")
             elif self.chosen_gesture == 1:
-                print("You picked Paper")
+                print(f"{self.name} has picked Paper")
             elif self.chosen_gesture == 2:
-                print("You picked Scissors")
+                print(f"{self.name} has picked Scissors")
             elif self.chosen_gesture == 3:
-                print("You picked Lizard")
+                print(f"{self.name} has picked Lizard")
             elif self.chosen_gesture == 4:
-                print("You picked Spock")
+                print(f"{self.name} has picked Spock")
             return self.chosen_gesture
