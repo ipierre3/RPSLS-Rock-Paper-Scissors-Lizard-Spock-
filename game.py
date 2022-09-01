@@ -5,7 +5,7 @@ class Game:
    def __init__(self):
     self.player_one = Human("Player 1")
     self.player_two = None
-    self.rounds = 0
+    self.num_rounds = 0
 
 
    def run_game(self):
@@ -37,10 +37,10 @@ class Game:
         self.rounds = int(input('\nHow many rounds do you wish to play?: '))
         while self.rounds < 3:
             print('Sorry! Rounds now defaulted to 3')
-            for self.num_rounds in range(3):
+            for self.rounds in range(3):
                 return self.rounds
         if self.rounds >= 3:
-            for self.num_rounds in range(int(self.rounds)):
+            for self.rounds in range(int(self.rounds)):
                 return self.rounds
         else:
             print('Invalid Choice')
@@ -96,9 +96,9 @@ class Game:
         self.player_two.score = score2
         if self.player_one.score > self.player_two.score:
             print(f'{self.player_one.name} Wins the Game!')
-        if self.player_one.score < self.player_two.score:
+        elif self.player_one.score < self.player_two.score:
             print(f'{self.player_two.name} Wins the Game!')
-        if self.player_one.score == self.player_two.score:
+        elif self.player_one.score == self.player_two.score:
             print ("IT WAS A TIE!")
 
    def play_again(self):
