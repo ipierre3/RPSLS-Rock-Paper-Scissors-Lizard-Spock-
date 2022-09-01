@@ -12,6 +12,7 @@ class Game:
         self.welcome_screen()
         self.number_of_rounds()
         self.game_mode()
+        self.chosen_gestures()
         self.compare_gesture()
         self.determine_winner()
         self.play_again()
@@ -23,11 +24,11 @@ class Game:
         play = input("Now would you like to play Rock, Paper, Scissors, Lizard, Spock(y/n): ").lower()
         if play == "y":
             print('\nFor selections: ')
-            print("\n1 = Rock")
-            print("2 = Paper")
-            print("3 = Scissors")
-            print("4 = Lizard")
-            print("5 = Spock")
+            print("\n0 = Rock")
+            print("1 = Paper")
+            print("2 = Scissors")
+            print("3 = Lizard")
+            print("4 = Spock")
 
         elif play == "n":
             print("\nNo worries! Maybe next time")
@@ -37,14 +38,14 @@ class Game:
         self.rounds = int(input('\nHow many rounds do you wish to play?: '))
         while self.rounds < 3:
             print('Sorry! Rounds now defaulted to 3')
-            for num_rounds in range(3):
-                num_rounds += 1
-            return num_rounds
+            for self.num_rounds in range(3):
+                self.num_rounds += 1
+            return self.rounds
         if self.rounds >= 3:
-            for num_rounds in range(int(self.rounds)):
-                num_rounds += 1
-            return num_rounds
-   
+            for self.num_rounds in range(int(self.rounds)):
+                self.num_rounds += 1
+            return self.rounds
+
    def game_mode(self):
         self.player = input('Would you like Single or Multi-player?: ').lower()
         if self.player == 'single':
@@ -56,18 +57,48 @@ class Game:
         else:
             print('Invalid Choice')
 
-   def compare_gesture(self):
-    pass
-    
-       
-   def determine_winner(self):
-    pass
+   def chosen_gestures(self):
+        player_one_choice = self.player_one.choose_gesture()
+        player_two_choice = self.player_two.choose_gesture()
+        
+        return self.compare_gesture(player_one_choice, player_two_choice)
 
-   def play_again(self):
-        while True:
-            self.again = input('Would you like to play again? Enter(y/n): ').lower()
-            if self.again == 'y':
-                self.welcome_screen()
-            else:
-                print('Thanks for playing!')
+   def compare_gesture(self, player_one_choice , player_two_choice):
+    for rounds in self.rounds:
+        if player_one_choice == player_two_choice:
+            print("It's a tie.")
+        elif player_one_choice == 0 and (player_two_choice == 2 or player_two_choice == 3):
+            print("You Win!")
+            self.player_one.score += 1
+        elif player_one_choice == 1 and (player_two_choice == 0 or player_two_choice == 4):
+            print("You Win!")
+            self.player_one.score += 1
+        elif player_one_choice == 2 and (player_two_choice == 1 or player_two_choice == 3):
+            print("You Win!")
+            self.player_one.score += 1
+        elif player_one_choice == 3 and (player_two_choice == 4 or player_two_choice == 1):
+            print("You Win!")
+            self.player_one.score += 1
+        elif player_one_choice == 4 and (player_two_choice == 2 or player_two_choice == 0):
+            print("You Win!")
+            self.player_one.score += 1
+        else:
+            print('Player 2 Wins!')
+            self.player_two.score += 1
+            if self.rounds == self.num_rounds:
                 break
+            else:
+                return self.chosen_gestures()
+            
+    
+#    def determine_winner(self):
+#     pass
+
+#    def play_again(self):
+#         while True:
+#             self.again = input('Would you like to play again? Enter(y/n): ').lower()
+#             if self.again == 'y':
+#                 self.welcome_screen()
+#             else:
+#                 print('Thanks for playing!')
+#                 break

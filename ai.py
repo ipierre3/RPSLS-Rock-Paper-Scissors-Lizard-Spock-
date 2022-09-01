@@ -13,4 +13,5 @@ class AI(Player):
         self.chosen_gesture = str(random.randint(0,4))
         gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         sleep(1)
-        print(f'{self.name} has picked {gestures_list[int(self.chosen_gesture)]})')
+        print(f'{self.name} has picked {gestures_list[int(self.chosen_gesture)]}')
+        return (int(self.chosen_gesture))
