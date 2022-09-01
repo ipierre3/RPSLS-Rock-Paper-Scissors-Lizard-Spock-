@@ -1,4 +1,3 @@
-from sys import exc_info, exit
 from human import Human
 from ai import AI
 
