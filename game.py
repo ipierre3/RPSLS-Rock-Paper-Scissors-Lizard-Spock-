@@ -14,6 +14,7 @@ class Game:
         self.game_mode()
         self.chosen_gestures()
         self.compare_gesture()
+        self.capture_score()
         self.determine_winner()
         self.play_again()
 
@@ -37,10 +38,10 @@ class Game:
         self.rounds = int(input('\nHow many rounds do you wish to play?: '))
         while self.rounds < 3:
             print('Sorry! Rounds now defaulted to 3')
-            for self.rounds in range(3):
+            for self.num_rounds in range(3):
                 return self.rounds
         if self.rounds >= 3:
-            for self.rounds in range(int(self.rounds)):
+            for self.num_rounds in range(int(self.rounds)):
                 return self.rounds
         else:
             print('Invalid Choice')
@@ -65,6 +66,7 @@ class Game:
    def compare_gesture(self, player_one_choice , player_two_choice):
         if player_one_choice == player_two_choice:
             print("\nIt's a tie.")
+            self.num_rounds += 1
         elif player_one_choice == 0 and (player_two_choice == 2 or player_two_choice == 3):
             print("\nPlayer 1 Wins!")
             self.player_one.score += 1
@@ -89,23 +91,32 @@ class Game:
             print(f'\n{self.player_two.name} Wins!')
             self.player_two.score += 1
             self.num_rounds += 1
-            return self.chosen_gestures()
+
+        if self.num_rounds == self.rounds:
+            self.capture_score()
+            self.determine_winner()
+            self.play_again()
+        else:
+            self.chosen_gestures()
+
+   def capture_score(self):
+        score1 = self.player_one.score
+        score2 = self.player_two.score
+        return 
             
-   def determine_winner(self, score1, score2):
-        self.player_one.score = score1
-        self.player_two.score = score2
+   def determine_winner(self):
         if self.player_one.score > self.player_two.score:
-            print(f'{self.player_one.name} Wins the Game!')
+            print(f'\n{self.player_one.name} Wins the Game!')
         elif self.player_one.score < self.player_two.score:
-            print(f'{self.player_two.name} Wins the Game!')
+            print(f'\n{self.player_two.name} Wins the Game!')
         elif self.player_one.score == self.player_two.score:
-            print ("IT WAS A TIE!")
+            print ("\nGAME HAS TIED!")
 
    def play_again(self):
         while True:
-            self.again = input('Would you like to play again? Enter(y/n): ').lower()
+            self.again = input('\nWould you like to play again? Enter(y/n): ').lower()
             if self.again == 'y':
                 self.welcome_screen()
             else:
-                print('Thanks for playing!')
+                print('\nThanks for playing!')
             break

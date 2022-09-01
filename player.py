@@ -6,7 +6,7 @@ class Player:
         self.gestures = ['Rock', 'Paper', "Scissors", 'Lizard', 'Spock']
 
     def win_round(self):
-        self.score += 1
+        pass
 
     def choose_gesture(self):
         pass
