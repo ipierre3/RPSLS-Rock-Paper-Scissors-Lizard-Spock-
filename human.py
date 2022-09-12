@@ -14,10 +14,10 @@ class Human(Player):
         while True:
             if self.chosen_gesture > 4:
                 print("Invalid choice. Please choose again")
-                self.choose_gesture()
+                return self.choose_gesture()
             elif self.chosen_gesture < 0:
                 print("Invalid choice. Please choose again")
-                self.choose_gesture()
+                return self.choose_gesture()
             elif self.chosen_gesture == 0:
                 print(f"{self.name} has picked Rock")
             elif self.chosen_gesture == 1:
